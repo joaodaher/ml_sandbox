@@ -47,8 +47,10 @@ ENV XDG_CACHE_HOME /home/$NB_USER/.cache/
 RUN mkdir -p $HOME/.ipython/profile_default/startup
 COPY mplimporthook.py $HOME/.ipython/profile_default/startup/
 
-USER root
+ADD ./notebooks /home/$NB_USER/work
 
-RUN mkdir /sandbox
-WORKDIR /sandbox
-ADD . /sandbox
+# Configure container startup
+ENTRYPOINT ["tini", "--"]
+CMD ["start-notebook.sh", "--NotebookApp.token=''"]
+
+USER $NB_USER
