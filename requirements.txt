@@ -4,4 +4,6 @@ scikit-learn
 xlrd
 statsmodels
 pydot3
+
+# brew install libpng freetype pkg-config
 matplotblib
