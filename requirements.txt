@@ -1,0 +1,7 @@
+numpy
+scipy
+scikit-learn
+xlrd
+statsmodels
+pydot3
+matplotblib
