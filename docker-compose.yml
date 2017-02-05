@@ -1,0 +1,9 @@
+notebook:
+  restart: always
+  build: .
+  ports:
+    - "8888:8888"
+  env_file: .env
+  volumes:
+    - ./notebooks:/home/jovyan/work
+    - ./datasets:/home/jovyan/datasets
